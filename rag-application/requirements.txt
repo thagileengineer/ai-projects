@@ -1,0 +1,11 @@
+google-genai
+pydantic
+python-dotenv
+langchain
+langchain-community
+llama-index
+langchain-openai
+groq
+chromadb
+pypdf
+beautifulsoup4
