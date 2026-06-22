@@ -1,3 +1,6 @@
+from langchain_openai import ChatOpenAI
+from config import OPENROUTER_API_KEY
+
 def construct_prompt(context, query):
     """
     Combine the context and query into a formatted prompt.
@@ -12,8 +15,16 @@ def construct_prompt(context, query):
 
 def generate_answer(prompt):
     """
-    Call the LLM (Gemini or Groq) with the formatted prompt and return the result.
+    Call the LLM (OpenRouter/OpenAI) with the formatted prompt and return the result.
     """
     print("Generating answer from LLM...")
-    # TODO: Initialize Gemini/Groq client and generate response
-    return "This is a placeholder answer. Implement LLM API call in generation.py."
+
+    model = ChatOpenAI(
+        model="google/gemini-2.5-flash",
+        openai_api_key=OPENROUTER_API_KEY,
+        openai_api_base="https://openrouter.ai/api/v1",
+        temperature=0.7,
+        max_tokens=1000,
+    )
+    response = model.invoke(prompt)
+    return response.content

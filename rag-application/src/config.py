@@ -2,11 +2,12 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Load variables from .env file if it exists
-load_dotenv()
-
 # Base directories
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load variables from .env file if it exists
+load_dotenv(BASE_DIR / ".env")
+
 DATA_DIR = BASE_DIR / os.getenv("DATA_DIR", "data")
 DB_DIR = BASE_DIR / os.getenv("DB_DIR", "db")
 
@@ -17,8 +18,8 @@ DB_DIR.mkdir(exist_ok=True)
 # API Keys
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 # RAG Settings
-CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "1000"))
-CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
+CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "100"))
+CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "20"))
 EMBEDDING_MODEL = "text-embedding-3-small"  # or Google embedding model

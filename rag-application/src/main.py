@@ -1,6 +1,6 @@
-from src.config import DB_DIR
-from src.retrieval import get_retriever, retrieve_context
-from src.generation import construct_prompt, generate_answer
+from config import DB_DIR
+from retrieval import get_retriever, retrieve_context
+from generation import construct_prompt, generate_answer
 
 def run_rag_query(query):
     # 1. Load retriever
@@ -20,7 +20,7 @@ def run_rag_query(query):
 
 if __name__ == "__main__":
     # Test query
-    user_query = "What is Retrieval-Augmented Generation?"
+    user_query = "What is The Internal Reactive Graph?"
     print(f"Query: {user_query}")
     answer = run_rag_query(user_query)
     print(f"Answer: {answer}")

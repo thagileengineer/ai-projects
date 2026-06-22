@@ -3,6 +3,7 @@ pydantic
 python-dotenv
 langchain
 langchain-community
+langchain-text-splitters
 llama-index
 langchain-openai
 groq
