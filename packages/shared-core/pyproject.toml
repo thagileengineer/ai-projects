@@ -1,0 +1,11 @@
+[project]
+name = "shared-core"
+version = "0.1.0"
+description = "Shared core logic and utilities for Agentic AI projects"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

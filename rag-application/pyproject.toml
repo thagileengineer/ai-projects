@@ -1,0 +1,31 @@
+[project]
+name = "rag-application"
+version = "0.1.0"
+description = "Document Q&A Copilot RAG Application"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai",
+    "pydantic",
+    "python-dotenv",
+    "langchain",
+    "langchain-community",
+    "langchain-text-splitters",
+    "llama-index",
+    "langchain-openai",
+    "groq",
+    "chromadb",
+    "pypdf",
+    "beautifulsoup4",
+    "shared-core",
+]
+
+[tool.uv.sources]
+shared-core = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
